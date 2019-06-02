@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 process.title = 'WLLR Server';
 var args = process.argv,
     rootFolder = args[2],
