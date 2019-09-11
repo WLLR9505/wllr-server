@@ -1,25 +1,24 @@
 #!/usr/bin/env node
-
+var path = require('path'),
+    http = require('http');
+    
 process.title = 'WLLR Server';
 var args = process.argv,
-    rootFolder = args[2],
+    rootFolder = args[2] || path.resolve(process.cwd()),
     port = args[3] || 8000;
 
-var http = require('http'),
-    path = require('path'),
-    config = require('./config'),
+var config = require('./config'),
     fileHandler = require('./filehandler'),
     parse = require('url').parse,
     types = config.types,
     defaultIndex = config.defaultIndex,
     webServer = http.createServer();
-
+    
 function main () {
     if (args[2] == '-h') {
         help();
     } else {
         try {
-            rootFolder = path.relative('../server-js', rootFolder);
             rootFolder = rootFolder.replace(/%20/g, ' ');
             rootFolder = rootFolder.replace(/\\/g , '/');
 

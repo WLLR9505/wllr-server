@@ -4,6 +4,6 @@
 A little node server
 
 ### Usage
-- `wllrserver [rootFolder]`  
+- `wllrserver [rootFolder]`  OR `wllrserver` (on current folder)
 - `Ctrl + C` to Shutdown  
 - `wllrserver -h` to help
